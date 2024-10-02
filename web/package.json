@@ -6,7 +6,9 @@
   "scripts": {
     "start": "http-server -p 8080",
     "test:unit": "jest",
-    "test:unit-local": "jest --no-cache --watchAll"
+    "test:unit-local": "jest --no-cache --watchAll",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "author": "Felipe Biel",
   "license": "ISC",
@@ -17,6 +19,8 @@
     "@babel/preset-env": "^7.25.4",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2"
   }
 }
