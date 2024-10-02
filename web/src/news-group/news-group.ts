@@ -1,10 +1,10 @@
-import { NewsGroup } from '../interfaces/news-interfaces.js';
+import { NewsGroup, NewsGroupResponse } from '../interfaces/news-interfaces.js';
 import { getNewsGroup } from '../services/api/news.js'
 import { loadTemplate } from "../utils/dom-functions.js";
 import { timer } from "../utils/helpers.js";
 import { removeSkeleton } from "../utils/news-functions.js";
 
-const newsGroups = await getNewsGroup();
+const newsGroups: NewsGroupResponse = await getNewsGroup();
 const newsListGroup = document.getElementById('new-group-box') as HTMLElement;
 newsListGroup.innerHTML = await loadTemplate('./assets/templates/news-skeleton.html');
 

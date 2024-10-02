@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./assets/js/",
     "rootDir": "./src",
     "noImplicitAny": true,
     "module": "ESNext",

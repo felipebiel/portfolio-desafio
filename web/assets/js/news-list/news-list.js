@@ -4,14 +4,14 @@ import { timer } from "../utils/helpers.js";
 import { removeSkeleton, prepareNewsElement } from "../utils/news-functions.js";
 let page = 1;
 const newsList = document.getElementById('news-list');
-const template = await loadTemplate('./assets/templates/news-skeleton.html');
-newsList.innerHTML = template ? template : '';
+const template = await loadTemplate('../../assets/templates/news-skeleton.html');
+newsList.innerHTML = template;
 let news = await getNews(page);
 async function createNewsItem(newsItem) {
     let newsContent = document.createElement('div');
     const isAd = newsList.childElementCount % 8;
     newsContent = await prepareNewsElement(newsContent, newsItem);
-    newsList.appendChild(newsContent);
+    newsList === null || newsList === void 0 ? void 0 : newsList.appendChild(newsContent);
     if (isAd == 0) {
         // cria um ad a cada 8 elementos
         const loadAd = await loadTemplate('./assets/templates/ad.html');

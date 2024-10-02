@@ -14,7 +14,7 @@ export async function getNewsGroup(): Promise<NewsGroupResponse> {
     return data;
 }
 
-export async function getMainNews() {
-    let data = await getNews(1, 'materia');
+export async function getMainNews(): Promise<NewsListResponse>  {
+    let data = await getNews(1, 'materia') as NewsListResponse;
     return data.slice(0, 2);
 }

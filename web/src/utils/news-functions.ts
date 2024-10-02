@@ -1,6 +1,6 @@
 import { loadTemplate } from "./dom-functions.js";
 import { formatDateByTime, formatTimeByMs } from "./dates-functions.js";
-import { News } from '../interfaces/news-interfaces.js';
+import { News, NewsGroup } from '../interfaces/news-interfaces.js';
 
 export function prepareLink(newsContent: HTMLElement, newsItem: News): void {
     // trata os links

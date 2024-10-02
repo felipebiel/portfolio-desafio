@@ -1,13 +1,13 @@
 export function formatDateByTime(dataISO: string): string {
-    const data = new Date(dataISO);
-    const now = new Date();
-    const diffMs = now.getTime() - data.getTime();
-    const diffSec = Math.floor(diffMs / 1000);
-    const diffMin = Math.floor(diffSec / 60);
-    const diffHour = Math.floor(diffMin / 60);
-    const diffDays = Math.floor(diffHour / 24);
-    const diffWeeks = Math.floor(diffDays / 7);
-    const diffMonths = now.getMonth() - data.getMonth() + (12 * (now.getFullYear() - data.getFullYear()));
+    const data: Date = new Date(dataISO);
+    const now: Date = new Date();
+    const diffMs: number = now.getTime() - data.getTime();
+    const diffSec: number = Math.floor(diffMs / 1000);
+    const diffMin: number = Math.floor(diffSec / 60);
+    const diffHour: number = Math.floor(diffMin / 60);
+    const diffDays: number = Math.floor(diffHour / 24);
+    const diffWeeks: number = Math.floor(diffDays / 7);
+    const diffMonths: number = now.getMonth() - data.getMonth() + (12 * (now.getFullYear() - data.getFullYear()));
 
     if (diffMin < 1) {
         return `Há ${diffSec} segundos`;
@@ -29,8 +29,8 @@ export function formatDateByTime(dataISO: string): string {
 }
 
 export function formatTimeByMs(milliseconds: number): string {
-    const minutes = Math.floor(milliseconds / 60000);
-    const hours = Math.floor(minutes / 60);
+    const minutes: number = Math.floor(milliseconds / 60000);
+    const hours: number = Math.floor(minutes / 60);
 
     if (hours > 0) return `${hours} hora${hours > 1 ? 's' : ''}`;
     else return `${minutes} minuto${minutes > 1 ? 's' : ''}`;

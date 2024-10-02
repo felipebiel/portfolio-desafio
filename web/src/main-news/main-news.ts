@@ -2,9 +2,9 @@ import { loadTemplate } from "../utils/dom-functions.js";
 import { getMainNews } from '../services/api/news.js'
 import { timer } from "../utils/helpers.js";
 import { removeSkeleton, prepareNewsElement } from "../utils/news-functions.js";
-import { News, NewsListResponse } from '../interfaces/news-interfaces.js';
+import { News, NewsListResponse  } from '../interfaces/news-interfaces.js';
 
-const mainNews = await getMainNews() as NewsListResponse;
+const mainNews: NewsListResponse = await getMainNews();
 
 const mainList = document.getElementById('main-news-box') as HTMLElement;
 
@@ -13,7 +13,7 @@ mainList.innerHTML = await loadTemplate('./assets/templates/main-news-skeleton.h
 // Função para criar elementos de uma notícia
 async function createNewsItem(newsItem: News) {
 
-    let newsContent = document.createElement('div') as HTMLElement;
+    let newsContent: HTMLElement = document.createElement('div');
 
     newsContent = await prepareNewsElement(newsContent, newsItem);
 
