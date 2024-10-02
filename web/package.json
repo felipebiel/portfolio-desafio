@@ -7,7 +7,7 @@
     "start": "http-server -p 8080",
     "test:unit": "jest",
     "test:unit-local": "jest --no-cache --watchAll",
-    "build": "tsc",
+    "build": "tsc --mode=production",
     "dev": "tsc --watch"
   },
   "author": "Felipe Biel",
